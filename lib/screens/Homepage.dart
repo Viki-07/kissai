@@ -29,7 +29,8 @@ final _groq =
 var searchText = new TextEditingController();
 var responseText = "";
 Future<String> sendMessage(String searchText) async {
-  GroqResponse response = await _groq.sendMessage(searchText);
+  GroqResponse response =
+      await _groq.sendMessage("Tell me about " + searchText + " in 50 words");
   return response.choices.first.message.content;
 }
 
